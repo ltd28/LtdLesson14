@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LeTienDat_241230697.Models.Sach>
+<div class="grid">
+	@foreach (var sach in Model)
+	{
+		<div class="book-card">
+			<a href="#">
+				<img src="~/images/@sach.Anh" alt="@sach.TenSach" />
+			</a>
+			
+			<h2>@sach.TenSach</h2>
+			<div class="book-foot">
+				<span class="price">@sach.Gia</span>
+				<button class="btn-buy" type="button">Them vao gio</button>
+			</div>
+		</div>
+	}
+</div>

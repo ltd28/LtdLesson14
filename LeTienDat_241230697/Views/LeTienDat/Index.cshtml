@@ -1,0 +1,17 @@
+﻿@model IEnumerable<LeTienDat_241230697.Models.Sach>
+<partial name="~/Views/Shared/LeTienDat_MainContent.cshtml" model="Model" />
+@section Scripts {
+	<script>
+		$(document).on("click",".the-loai-link", function(e){
+			e.preventDefault();
+			const id = $(this).data("id");
+			const tenTheLoai = $(this).text().trim();
+
+			$("#tieu-de-danh-sach").text(tenTheLoai);
+
+			$("#vung-danh-sach-sach").load(
+				`/LeTienDat/LocTheoTheLoai?id=${id}`
+			);
+		});
+	</script>
+}
